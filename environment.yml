@@ -1,0 +1,10 @@
+name: partition-problem
+channels:
+  - defaults
+dependencies:
+  - matplotlib
+  - pandas
+  - seaborn
+  - flake8
+  - ipykernel
+prefix: C:\matth\Anaconda\envs\partition-problem
