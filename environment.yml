@@ -7,4 +7,5 @@ dependencies:
   - seaborn
   - flake8
   - ipykernel
+  - notebook
 prefix: C:\matth\Anaconda\envs\partition-problem
