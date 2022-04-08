@@ -28,7 +28,7 @@ class ArraySplitter:
             'D': {'method': '_split_mean_greedy', 'complexity': 'O(n)'},
             'E': {'method': '_split_sort_index', 'complexity': 'O(nlogn)'},
             'F': {'method': '_split_reverse_greedy', 'complexity': 'O(nlogn)'},
-            'G': {'method': '_split_KK', 'complexity': 'O(nlogn)?'}
+            'G': {'method': '_split_kk', 'complexity': 'O(nlogn)'}
         }
 
     def split(self, name):
@@ -134,8 +134,8 @@ class ArraySplitter:
         s1, s2 = self._split_greedy(reverse_sorted_array)  # O(n)
         return s1, s2
 
-    # Approach G - time complexity O(nlogn)?
-    def _split_KK(self, array):
+    # Approach G - time complexity O(nlogn)
+    def _split_kk(self, array):
         """Sorts high to low, then removes the first two members of the array.
         The 2nd value is subtracted from the first value, and the difference is appended to the end of the list.
         The list is then resorted, and the process is repeated until the list length is 1.
@@ -150,7 +150,7 @@ class ArraySplitter:
         s2_ = []
 
         reverse_sorted_array = sorted(array, reverse=True)  # O(nlogn)
-        while len(reverse_sorted_array) > 1:  # O(n/2)
+        while len(reverse_sorted_array) > 1:  # O(n)
             elem_0 = reverse_sorted_array.pop(0)
             elem_1 = reverse_sorted_array.pop(0)
             reverse_sorted_array.append(elem_0 - elem_1)
